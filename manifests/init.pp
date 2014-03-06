@@ -58,7 +58,7 @@ class tftp (
     xinetd::service { 'tftp':
       port        => $port,
       protocol    => 'udp',
-      server_args => $directory,
+      server_args => "$directory ${options}",
       server      => $binary,
       bind        => $address,
       socket_type => 'dgram',
